@@ -1,0 +1,20 @@
+name: cd-between-dirs
+
+on: workflow_dispatch
+
+jobs:
+  cd-between-dirs:
+    runs-on: ubuntu:latest
+    steps:
+      - name: "Work directory"
+        shell: bash
+        run: |
+          echo "pwd: $(pwd)"
+          ls -Alh
+          mkdir hello
+          cd hello
+      - name: "Does cd stay?"
+        shell: bash
+        run: |
+          echo "pwd: $(pwd)"
+          ls -Alh
